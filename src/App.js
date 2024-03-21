@@ -1,10 +1,41 @@
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './App.css';
-import LandingScreen from './screen/LandingScreen';
+import Contact from './component/Contact';
+import Foods from './component/Foods';
+import Home from './component/Home';
+import Quote from './component/Quote';
+import Restaurent from './component/Restaurent';
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component:Home
+  },
+  {
+    path: "/Quote",
+    Component:Quote
+  },
+  {
+    path: "/Restaurent",
+    Component:Restaurent
+  },
+  {
+    path: "/Foods",
+    Component:Foods
+  },
+  {
+    path: "/Contact",
+    Component:Contact
+  },
+
+])
 
 function App() {
   return (
     <>
-      <LandingScreen/>
+      <RouterProvider router={router}></RouterProvider>
     </ >
   );
 }
